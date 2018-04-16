@@ -36,6 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node.vm.provider :virtualbox do |vb|
           vb.customize ["modifyvm", :id, "--memory", "3072"]
           vb.customize ["modifyvm", :id, "--cpus", "2"]
+	config.vm.provision "shell", path "./provisioning/pre_setting.sh", args: ""
       end
     end
 
